@@ -5,7 +5,6 @@ import { ReactComponent as Leaf } from "../asset/svg/natural.svg";
 const Container = styled.div`
 	position: relative;
 	width: 85%;
-	height: 400px;
 	margin: 0 auto;
 	background-color: #ffca7a;
 	border-radius: 10px;
@@ -13,38 +12,33 @@ const Container = styled.div`
 	box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.5);
 	margin-bottom: 3rem;
 	margin-top: 3rem;
+	padding: 2rem 0;
+	display: flex;
+	align-items: center;
 	@media (min-width: 990px) {
-		height: 350px;
 	}
 `;
 const Image = styled.div`
 	display: none;
-
 	@media (min-width: 990px) {
-		display: flex;
+		display: block;
 		width: 100%;
 		height: 100%;
 
-		.image-wrapper {
+		img {
+			width: 100%;
 			height: 100%;
-			width: 50%;
-			margin-right: auto;
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
+			object-fit: cover;
 		}
 	}
 `;
 const Detail = styled.div`
-	position: absolute;
 	width: 100%;
 	height: 100%;
 	z-index: 3;
-	padding: 1rem 2rem;
+	padding: 0 2rem;
 	@media (min-width: 990px) {
-		width: 60%;
+		width: 100%;
 	}
 `;
 const Title = styled.div`
@@ -84,10 +78,7 @@ const Natural = ({ name }) => {
 				</Desc>
 			</Detail>
 			<Image>
-				<div className="image-wrapper">
-					<div className="gradient" />
-					<img src={pic} alt="شمع داخل کوزه" />
-				</div>
+				<img src={pic} alt="شمع داخل کوزه" />
 			</Image>
 		</Container>
 	);
