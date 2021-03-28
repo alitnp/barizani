@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import logo from "../asset/svg/logo.svg";
-import header1 from "../asset/image/header1.jpeg";
-import header2 from "../asset/image/header2.jpeg";
+import header1 from "../asset/image/object1.png";
+import header2 from "../asset/image/object2.png";
 
 const Container = styled.div`
 	position: relative;
-	overflow: hidden;
 	height: 700px;
-	background: ${(p) => p.color};
-	@media (min-width: 768px) {
+	background: #fbd6a5;
+	display: flex;
+	flex-direction: column;
+	@media (min-width: 990px) {
 		border-top-left-radius: 0.5rem;
 		border-top-right-radius: 0.5rem;
-	}
-	@media (min-width: 1200px) {
+		flex-direction: row;
+		align-items: center;
 		height: 500px;
 	}
 `;
@@ -34,57 +35,31 @@ const LogoWrapper = styled.div`
 		font-weight: 500;
 	}
 `;
-const Gradient = styled.div`
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(${(p) => p.color} 0%, ${(p) => p.color}00 30%);
-	z-index: 3;
-	@media (min-width: 1200px) {
-		background: linear-gradient(
-			-90deg,
-			${(p) => p.color} 0%,
-			${(p) => p.color}00 30%
-		);
-	}
-`;
+
 const ImageWrapper = styled.div`
-	position: relative;
-	display: flex;
 	width: 100%;
-	height: 100%;
-	z-index: 1;
-	.wrap {
-		width: 100%;
-		margin-top: auto;
-		position: relative;
-		@media (min-width: 768px) {
-			height: 60%;
-		}
-		@media (min-width: 990px) {
-			height: 50%;
-		}
-		@media (min-width: 1200px) {
-			width: 50%;
-			height: 100%;
-			margin-top: unset;
-			margin-right: auto;
-		}
-	}
+	height: 40%;
+	padding: 0 7.5%;
+	padding-bottom: 20px;
 	img {
 		width: 100%;
+		height: 100%;
 		object-fit: contain;
-		@media (min-width: 768px) {
-			height: 100%;
-			object-fit: cover;
-			object-position: center center;
+		object-position: center center;
+		filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.2));
+		transform: ${(p) =>
+			p.slide === 1 ? "scale(1.2) translateY(-30px)" : "translateY(-30px)"};
+	}
+	@media (min-width: 990px) {
+		height: 100%;
+		width: 50%;
+		padding: 100px 50px;
+		img {
+			transform: ${(p) => (p.slide === 1 ? "scale(1)" : "")};
 		}
 	}
 `;
 const Detail = styled.div`
-	position: absolute;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -109,12 +84,11 @@ const Detail = styled.div`
 		margin-top: 1rem;
 	}
 	@media (min-width: 990px) {
-		height: 50%;
-	}
-	@media (min-width: 1200px) {
 		height: 100%;
 		width: 50%;
 		align-items: flex-start;
+		flex-shrink: 0;
+		padding: none;
 		p {
 			text-align: right;
 		}
@@ -142,7 +116,6 @@ const Dot = styled.div`
 const headerData = [
 	{
 		pic: header1,
-		color: "#fbd6a5",
 		title: "شمع های طبی",
 		subTitle: "از بین برنده چرک گوش",
 		desc:
@@ -150,7 +123,6 @@ const headerData = [
 	},
 	{
 		pic: header2,
-		color: "#EABB85",
 		title: "شمع های طبی",
 		subTitle: "کمک به سیستم تنفسی",
 		desc:
@@ -159,7 +131,7 @@ const headerData = [
 ];
 
 const Header = () => {
-	const [slide, setSlide] = useState(1);
+	const [slide, setSlide] = useState(0);
 
 	useEffect(() => {
 		const slideHandler = () => {
@@ -176,17 +148,11 @@ const Header = () => {
 	}, [slide]);
 
 	return (
-		<Container color={headerData[slide].color}>
+		<Container>
 			<LogoWrapper>
 				<img src={logo} alt="لوگو باریزانی" />
 				<span>{"باریزانی"}</span>
 			</LogoWrapper>
-			<ImageWrapper>
-				<div className="wrap ">
-					<Gradient color={headerData[slide].color} />
-					<img src={headerData[slide].pic} alt="عکس از شمع طبی" />
-				</div>
-			</ImageWrapper>
 			<Detail>
 				<h1>{headerData[slide].title}</h1>
 				<h3>{headerData[slide].subTitle}</h3>
@@ -203,6 +169,9 @@ const Header = () => {
 					})}
 				</Bullets>
 			</Detail>
+			<ImageWrapper slide={slide}>
+				<img src={headerData[slide].pic} alt="عکس از شمع طبی" />
+			</ImageWrapper>
 		</Container>
 	);
 };

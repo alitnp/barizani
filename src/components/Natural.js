@@ -42,12 +42,11 @@ const Detail = styled.div`
 	}
 `;
 const Title = styled.div`
-	& * {
-		display: inline;
-	}
+	display: flex;
+	align-items: center;
 	svg {
 		height: 52px;
-		transform: translateY(0.5rem);
+		margin-left: 0.5rem;
 	}
 	h2 {
 		color: var(--green);

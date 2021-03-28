@@ -30,7 +30,7 @@ const Image = styled.div`
 			top: 0;
 			left: 0;
 			z-index: 2;
-			background: linear-gradient(#eabb85 0%, #eabb8500 20%);
+			background: linear-gradient(#eabb85 0%, #eabb8500 40%);
 		}
 	}
 `;
