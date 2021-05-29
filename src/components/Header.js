@@ -134,6 +134,13 @@ const Header = () => {
 	const [slide, setSlide] = useState(0);
 
 	useEffect(() => {
+		const imageList = [header1, header2];
+		imageList.forEach((image) => {
+			new Image().src = image;
+		});
+	}, []);
+
+	useEffect(() => {
 		const slideHandler = () => {
 			if (slide === headerData.length - 1) {
 				setSlide(0);
@@ -150,8 +157,8 @@ const Header = () => {
 	return (
 		<Container>
 			<LogoWrapper>
-				<img src={logo} alt="لوگو باریزانی" />
-				<span>{"باریزانی"}</span>
+				<img src={logo} alt="لوگو باریزان" />
+				<span>{"باریزان"}</span>
 			</LogoWrapper>
 			<Detail>
 				<h1>{headerData[slide].title}</h1>
