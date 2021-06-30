@@ -5,11 +5,12 @@ const Container = styled.div`
 	width: 100%;
 	padding-top: 3rem;
 	padding-bottom: 3rem;
-	background: url(${pic}) rgba(218, 185, 142, 0.9);
-	background-blend-mode: hue;
+	/* background: url(${pic}) rgba(218, 185, 142, 0.9); */
+	/* background-blend-mode: hue;
 	background-size: cover;
 	background-position: center bottom;
-	background-attachment: fixed;
+	background-attachment: fixed; */
+	background-color: var(--yellow-bg);
 	@media (min-width: 768px) {
 		border-bottom-left-radius: 0.5rem;
 		border-bottom-right-radius: 0.5rem;
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
 	margin: 0 7.5%;
 	border-top: 1px solid var(--text);
 	li {
-		font-size: var(--text-s);
+		font-size: var(--text-m);
 		margin-top: 1rem;
 		max-width: 75ch;
 	}
@@ -35,14 +36,10 @@ const Footer = () => {
 							"جهت هرگونه سفارش و یا پیشنهاد همکاری از راه های ارتباطی بالا استفاده کنید"
 						}
 					</li>
+					<li>{"کلیه حقوق محصولات در اختیار برند باریزان می باشد."}</li>
 					<li>
 						{
-							"کلیه حقوق محصولات مربوط به شرکت ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد"
-						}
-					</li>
-					<li>
-						{
-							"شرکت باریزانی داره مجوز تولید به شماره ۱۲۳۴-۳۴۳۴-۵۶ به تاریخ ۲۰ مرداد ۱۳۹۹ با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است"
+							"برند باریزان با شماره ثبت 235725 مورخ 14/05/1398 شروع به فعالیت نموده و در سال 1399 موفق به ثبت اختراع کسب مجوز فعالیت نموده است."
 						}
 					</li>
 				</ul>

@@ -21,14 +21,14 @@ const Title = styled.h2`
 
 const Video = () => {
 	return (
-		<>
+		<div name="video">
 			<Title>{"طریقه استفاده"}</Title>
 			<Container>
 				<div className="video-wrapper">
 					<ReactPlayer url={video} controls={true} width="100%" />
 				</div>
 			</Container>
-		</>
+		</div>
 	);
 };
 

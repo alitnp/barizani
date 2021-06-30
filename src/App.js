@@ -5,13 +5,14 @@ import CoOp from "./components/CoOp";
 import Features from "./components/Features";
 import Header from "./components/Header";
 import History from "./components/History";
-import Legal from "./components/Legal";
+// import Legal from "./components/Legal";
 import Natural from "./components/Natural";
 import PageLayout from "./components/PageLayout";
 import Video from "./components/Video";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import { scroller } from "react-scroll";
+import Inventors from "./components/Invetntors";
 
 function App() {
 	const goToContactUs = () => {
@@ -21,22 +22,22 @@ function App() {
 			smooth: "easeInOutQuart",
 		});
 	};
-	const goToFDA = () => {
-		scroller.scrollTo("FDA", {
+	const goToArticle = () => {
+		scroller.scrollTo("article", {
 			duration: 300,
 			delay: 0,
 			smooth: "easeInOutQuart",
 		});
 	};
-	const goToNatural = () => {
-		scroller.scrollTo("natural", {
+	const goToHistory = () => {
+		scroller.scrollTo("history", {
 			duration: 300,
 			delay: 0,
 			smooth: "easeInOutQuart",
 		});
 	};
-	const goToCoOp = () => {
-		scroller.scrollTo("coop", {
+	const goToVideo = () => {
+		scroller.scrollTo("video", {
 			duration: 300,
 			delay: 0,
 			smooth: "easeInOutQuart",
@@ -45,20 +46,25 @@ function App() {
 
 	return (
 		<PageLayout>
-			<Header />
-			<Features
-				goToFDA={goToFDA}
-				goToNatural={goToNatural}
-				goToCoOp={goToCoOp}
+			<Header
+				goToContactUs={goToContactUs}
+				goToHistory={goToHistory}
+				goToVideo={goToVideo}
 			/>
-			<Article1 goToContactUs={goToContactUs} />
+			{/* <Features
+				goToArticle={goToArticle}
+				goToHistory={goToHistory}
+				goToVideo={goToVideo}
+			/> */}
+			<Article1 goToContactUs={goToContactUs} name="article" />
+			<Inventors />
+			<History name="history" />
+			<Natural />
+			{/* <CoOp name="coop" goToContactUs={goToContactUs} /> */}
 			<Article2 goToContactUs={goToContactUs} />
-			<CoOp name="coop" goToContactUs={goToContactUs} />
-			<History />
-			<Natural name="natural" />
-			<Video />
-			<Legal name="FDA" />
-			<AboutUs />
+			<Video name="video" />
+			{/* <Legal name="FDA" /> */}
+			{/* <AboutUs /> */}
 			<ContactUs name="contact-us" />
 			<Footer />
 		</PageLayout>

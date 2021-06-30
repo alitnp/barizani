@@ -24,6 +24,9 @@ const Card = styled.div`
 	border: 1px solid var(--text-grey);
 	border-radius: 10px;
 	padding-bottom: 1rem;
+	p {
+		font-size: var(--text-l);
+	}
 	svg {
 		height: 24px;
 		width: 24px;
@@ -37,6 +40,10 @@ const Card = styled.div`
 		margin: 0 7.5%;
 		padding: 1rem 0;
 		margin-bottom: 0.75rem;
+	}
+	.ltr {
+		display: block;
+		direction: ltr;
 	}
 	@media (min-width: 600px) {
 		width: 350px;
@@ -70,41 +77,56 @@ const Arrows = styled.div`
 		display: none;
 	}
 `;
-
+const Title = styled.h2`
+	margin: 0 7.5%;
+	margin-top: 6rem;
+	margin-bottom: -2rem;
+	font-size: var(--header-xs);
+	text-align: center;
+	display: none;
+	@media (min-width: 990px) {
+		display: block;
+	}
+`;
 const ContactUs = ({ name }) => {
 	return (
-		<Container name={name}>
-			<h2 className="h2">{"ارتباط با ما"}</h2>
-			<Arrows>
-				<div className="row">
-					<ArrowIcon />
-					<span>{"شروع همکاری"}</span>
-				</div>
-				<div className="row">
-					<ArrowIcon />
-					<span>{"ثبت سفارش"}</span>
-				</div>
-				<div className="row">
-					<ArrowIcon />
-					<span>{"ارتباط با ما"}</span>
-				</div>
-			</Arrows>
-			<Card>
-				<div className="title">
-					<PhoneIcon />
-					<span>{"تلفن تماس"}</span>
-				</div>
-				<p>{"۰۲۱-۳۴۵۶۷۸۹۰"}</p>
-				<p>{"۰۹۱۲-۳۴۵۶۷۸۹۰"}</p>
-			</Card>
-			<Card>
-				<div className="title">
-					<InstaIcon />
-					<span>{"صفحه اینستاگرام"}</span>
-				</div>
-				<span>{"@Barizani_Candles"}</span>
-			</Card>
-		</Container>
+		<>
+			<Title>{"راه های ارتباطی"}</Title>
+			<Container name={name}>
+				<h2 className="h2">{"ارتباط با ما"}</h2>
+				<Arrows>
+					<div className="row">
+						<ArrowIcon />
+						<span>{"شروع همکاری"}</span>
+					</div>
+					<div className="row">
+						<ArrowIcon />
+						<span>{"ثبت سفارش"}</span>
+					</div>
+					<div className="row">
+						<ArrowIcon />
+						<span>{"ارتباط با ما"}</span>
+					</div>
+				</Arrows>
+				<Card>
+					<div className="title">
+						<PhoneIcon />
+						<span>{"تلفن تماس"}</span>
+					</div>
+					<p>{"۰۲۱-۲۲۲۰۹۷۶۹"}</p>
+					<p>{"۰۹۱۲-۱۷۹۷۶۸۳"}</p>
+				</Card>
+				<Card>
+					<div className="title">
+						<InstaIcon />
+						<span>{"صفحه اینستاگرام"}</span>
+					</div>
+					<span className="ltr" style={{ fontSize: "1.2rem" }}>
+						{"@Barizani_Candles"}
+					</span>
+				</Card>
+			</Container>
+		</>
 	);
 };
 

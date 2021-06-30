@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import logo from "../asset/svg/logo.svg";
-import header1 from "../asset/image/object1.png";
-import header2 from "../asset/image/object2.png";
+import header1 from "../asset/image/header1.jpeg";
+import header2 from "../asset/image/header2.jpeg";
 
 const Container = styled.div`
 	position: relative;
-	height: 700px;
-	background: #fbd6a5;
+	padding-top: 80px;
+	background: var(--yellow-bg);
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 	@media (min-width: 990px) {
+		padding-top: 0;
 		border-top-left-radius: 0.5rem;
 		border-top-right-radius: 0.5rem;
 		flex-direction: row;
@@ -22,10 +24,13 @@ const LogoWrapper = styled.div`
 	position: absolute;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	height: 52px;
 	z-index: 5;
-	top: 1rem;
-	right: 7.5%;
+	top: 0;
+	right: 0;
+	padding: 2rem 7.5%;
+	width: 100%;
 	img {
 		height: 52px;
 	}
@@ -34,28 +39,64 @@ const LogoWrapper = styled.div`
 		font-size: var(--text-l);
 		font-weight: 500;
 	}
+	& * {
+		display: block;
+	}
+	& div {
+		display: flex;
+		align-items: center;
+	}
+	.nav {
+		display: none;
+	}
+	.nav p:hover {
+		cursor: pointer;
+		text-decoration: underline;
+		color: var(--green);
+	}
+	@media (min-width: 768px) {
+		.nav {
+			display: flex;
+		}
+		.nav p {
+			margin: 0 1rem;
+			font-weight: 500;
+			color: var(--text);
+		}
+		.nav p:last-child {
+			margin-left: 0;
+		}
+		.nav .bullet {
+			width: 0.5rem;
+			height: 0.5rem;
+			background-color: var(--green);
+			opacity: 0.7;
+			border-radius: 1rem;
+		}
+	}
 `;
 
 const ImageWrapper = styled.div`
 	width: 100%;
-	height: 40%;
-	padding: 0 7.5%;
-	padding-bottom: 20px;
+	height: 300px;
+	min-height: 350px;
+	padding: 0;
+	padding-bottom: 0;
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
 		object-position: center center;
-		filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.2));
-		transform: ${(p) =>
-			p.slide === 1 ? "scale(1.2) translateY(-30px)" : "translateY(-30px)"};
+		/* filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.2)); */
+		/* transform: ${(p) =>
+			p.slide === 1 ? "scale(1.2) translateY(-30px)" : "translateY(-30px)"}; */
 	}
 	@media (min-width: 990px) {
 		height: 100%;
-		width: 50%;
-		padding: 100px 50px;
+		width: 60%;
+		padding: 0;
 		img {
-			transform: ${(p) => (p.slide === 1 ? "scale(1)" : "")};
+			/* transform: ${(p) => (p.slide === 1 ? "scale(1)" : "")}; */
 		}
 	}
 `;
@@ -64,11 +105,8 @@ const Detail = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	top: 0;
-	right: 0;
 	width: 100%;
-	padding: 0 7.5%;
-	height: 60%;
+	height: 200px;
 	z-index: 6;
 	h1 {
 		font-size: var(--text-l);
@@ -78,18 +116,25 @@ const Detail = styled.div`
 		font-size: var(--header-xs);
 	}
 	p {
-		font-size: var(--text-s);
+		font-size: var(--text-m);
 		text-align: center;
 		max-width: 70ch;
-		margin-top: 1rem;
+		margin: 1rem;
+		margin-bottom: 0;
+		margin-top: 0.25rem;
 	}
 	@media (min-width: 990px) {
+		justify-content: center;
+		padding-left: 1rem;
+		padding-right: 7.5%;
 		height: 100%;
-		width: 50%;
+		width: 40%;
 		align-items: flex-start;
 		flex-shrink: 0;
 		padding: none;
 		p {
+			margin: 0;
+			margin-top: 0.25rem;
 			text-align: right;
 		}
 	}
@@ -117,20 +162,23 @@ const headerData = [
 	{
 		pic: header1,
 		title: "شمع های طبی",
-		subTitle: "از بین برنده چرک گوش",
-		desc:
-			"متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده",
+		subTitle: "شمع پاکسازی مجاری گوش",
+		desc: `شمع پاکسازی مجاری گوش که از پارچه کتان، موم طبیعی و عصاره گیاهان تهیه شده.
+		اولین شمع کاملا بی خطر و موثر در دنیا تایید شده در مرکز تحقیقات طب سنتی دانشکده داروسازی دانشگاه تهران.
+		`,
 	},
 	{
 		pic: header2,
 		title: "شمع های طبی",
 		subTitle: "کمک به سیستم تنفسی",
-		desc:
-			"متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده",
+		desc: `شمعهای ساخته از موم طبیعی
+		در دو شکل سفالی و شیشه ای ارائه میگردد.
+		مفید برای سیستم تنفسی، پاکسازی محیط، تنظیم کننده چاکراها
+		با سوزاندن آن احساس آرامش میکنیم.`,
 	},
 ];
 
-const Header = () => {
+const Header = ({ goToContactUs, goToHistory, goToVideo }) => {
 	const [slide, setSlide] = useState(0);
 
 	useEffect(() => {
@@ -157,12 +205,21 @@ const Header = () => {
 	return (
 		<Container>
 			<LogoWrapper>
-				<img src={logo} alt="لوگو باریزان" />
-				<span>{"باریزان"}</span>
+				<div className="logo">
+					<img src={logo} alt="لوگو باریزان" />
+					<span>{"باریزان"}</span>
+				</div>
+				<div className="nav">
+					<p onClick={goToHistory}>{"تاریخچه"}</p>
+					<div className="bullet"></div>
+					<p onClick={goToVideo}>{"طریقه مصرف"}</p>
+					<div className="bullet"></div>
+					<p onClick={goToContactUs}>{"ثبت سفارش"}</p>
+				</div>
 			</LogoWrapper>
 			<Detail>
 				<h1>{headerData[slide].title}</h1>
-				<h3>{headerData[slide].subTitle}</h3>
+				<h3> {headerData[slide].subTitle}</h3>
 				<p>{headerData[slide].desc}</p>
 				<Bullets>
 					{headerData.map((item, idx) => {
@@ -177,7 +234,14 @@ const Header = () => {
 				</Bullets>
 			</Detail>
 			<ImageWrapper slide={slide}>
-				<img src={headerData[slide].pic} alt="عکس از شمع طبی" />
+				{slide === 0 && <img src={headerData[0].pic} alt="عکس از شمع طبی" />}
+				{slide === 1 && (
+					<img
+						src={headerData[1].pic}
+						alt="عکس از شمع طبی"
+						style={{ transform: "scale(1.1)" }}
+					/>
+				)}
 			</ImageWrapper>
 		</Container>
 	);

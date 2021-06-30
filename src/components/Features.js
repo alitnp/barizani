@@ -2,12 +2,14 @@ import styled from "styled-components";
 import { ReactComponent as Check } from "../asset/svg/check.svg";
 import { ReactComponent as Leaf } from "../asset/svg/leaf.svg";
 import { ReactComponent as Chart } from "../asset/svg/chart.svg";
+import history from "../asset/png/history.png";
+import lamp from "../asset/png/lamp.png";
 
 const Container = styled.div`
 	width: 100%;
 	padding: 0 7.5%;
-	padding-top: 6rem;
-	padding-bottom: 6rem;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
 	background: var(--grey);
 	@media (min-width: 1600px) {
 		display: flex;
@@ -39,9 +41,6 @@ const Card = styled.div`
 	margin: 0 auto;
 	margin-top: 2rem;
 	:hover .icon-wrapper {
-		svg path {
-			fill: var(--white);
-		}
 	}
 	:hover .icon-wrapper .motion {
 		transform: scale(0);
@@ -57,6 +56,7 @@ const Card = styled.div`
 		align-items: center;
 		justify-content: center;
 		margin-left: 1rem;
+		cursor: pointer;
 		.motion {
 			position: absolute;
 			transition: transform 0.3s ease-out;
@@ -94,49 +94,58 @@ const Card = styled.div`
 	}
 `;
 
-const Features = ({ goToFDA, goToNatural, goToCoOp }) => {
+const Features = ({ goToArticle, goToHistory, goToVideo }) => {
 	const cardsData = [
 		{
-			pic: <Check style={{ zIndex: 3 }} />,
-			title: "تاییدیه FDA",
-			desc:
-				"متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
-			goto: goToFDA,
-		},
-		{
 			pic: <Leaf style={{ zIndex: 3 }} />,
-			title: "مواد طبیعی",
-			desc:
-				"متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
-			goto: goToNatural,
+			title: "شمع های طبیعی",
+			desc: "متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+			goto: goToArticle,
 		},
 		{
-			pic: <Chart style={{ zIndex: 3 }} />,
-			title: "آماده همکاری",
-			desc:
-				"متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
-			goto: goToCoOp,
+			pic: (
+				<img
+					style={{ zIndex: 3, width: "35px", height: "35px" }}
+					src={history}
+					alt="تاریخچه"
+				/>
+			),
+			title: "تاریخچه شمع ها",
+			desc: "متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+			goto: goToHistory,
+		},
+		{
+			pic: (
+				<img
+					style={{ zIndex: 3, width: "40px", height: "40px" }}
+					src={lamp}
+					alt="تاریخچه"
+				/>
+			),
+			title: "طریقه مصرف",
+			desc: "متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+			goto: goToVideo,
 		},
 	];
 	return (
 		<Container>
-			<Header>
-				<span>{"باریزانی شامل این"}</span>
+			{/* <Header>
+				<span>{"باریزان شامل این"}</span>
 				<h4>{"ویژگی ها"}</h4>
 				<span>{"است."}</span>
-			</Header>
+			</Header> */}
 			<CardsWrapper>
 				{cardsData.map((item, idx) => {
 					return (
-						<Card key={idx}>
+						<Card key={idx} onClick={cardsData[idx].goto}>
 							<div className="icon-wrapper">
 								{cardsData[idx].pic}
 								<div className="motion" />
 							</div>
 							<div className="detail">
 								<h2>{cardsData[idx].title}</h2>
-								<p>{cardsData[idx].desc}</p>
-								<span onClick={cardsData[idx].goto}>{"بیشتر بخوانید"}</span>
+								{/* <p>{cardsData[idx].desc}</p> */}
+								<span>{"بیشتر بخوانید"}</span>
 							</div>
 						</Card>
 					);
