@@ -6,14 +6,16 @@ import { ReactComponent as LogoText } from "../asset/svg/logo-text.svg";
 
 const Container = styled.article`
 	padding: 3rem 7.5%;
-	margin-top: 2rem;
+	padding-bottom: 0;
+	margin-bottom: 64px;
+	margin-top: 32px;
+	direction: ltr;
 	.detail {
 	}
 	.image-wrapper {
 		position: relative;
 		width: 100%;
 		height: 250px;
-		background-color: none;
 		overflow: hidden;
 		border-radius: 1rem;
 		box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.2);
@@ -22,51 +24,32 @@ const Container = styled.article`
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			object-position: bottom;
 		}
 		.logo-wrapper {
 			position: absolute;
 			top: 1rem;
-			left: 1rem;
+			right: 1rem;
 			width: 50px;
 			z-index: 5;
-			filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
 		}
 	}
-	@media (min-width: 500px) {
-		.image-wrapper {
-			height: 300px;
-			img {
-				object-position: center bottom;
-			}
-		}
-	}
-	@media (min-width: 768px) {
-		.image-wrapper {
-			height: 300px;
-			img {
-				object-position: bottom;
-			}
-		}
-	}
-	@media (min-width: 990px) {
+	@media (min-width: 1200px) {
 		display: flex;
+		flex-direction: row-reverse;
 		.image-wrapper {
 			margin-right: auto;
 			flex-shrink: 0;
-			width: 400px;
+			width: 500px;
 			height: 400px;
-
-			margin-top: 3rem;
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				object-position: bottom;
-			}
+			margin-top: unset;
 		}
 		.detail {
 			margin-left: 2rem;
+		}
+	}
+	@media (min-width: 1600px) {
+		.image-wrapper {
+			width: 650px;
 		}
 	}
 `;
@@ -75,23 +58,20 @@ const Title = styled.h1`
 `;
 const SubTitle = styled.h2`
 	font-size: var(--text-xl);
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.25rem;
 `;
 const Desc = styled.p`
 	color: var(--text);
-	font-size: var(--text-s);
-	margin-bottom: 1rem;
+	font-size: 14px;
+	margin-bottom: 2rem;
 	max-width: 85ch;
-	@media (min-width: 768px) {
-		font-size: var(--text-m);
-	}
 `;
 
-const Article1 = ({ goToContactUs, name }) => {
+const Article1 = ({ goToContactUs }) => {
 	return (
 		<Container>
-			<div className="detail" name={name}>
-				{/* <Title>{"توضیح اختراع"}</Title> */}
+			<div className="detail">
+				{/* <Title>{"با استفاده از طب سنتی و مواد طبیعی"}</Title> */}
 				<SubTitle>{"توضیح اختراع"}</SubTitle>
 				<Desc>
 					{

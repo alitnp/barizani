@@ -4,7 +4,8 @@ import video from "../asset/video/video.mp4";
 
 const Container = styled.div`
 	width: 100%;
-	margin-bottom: 3rem;
+	margin-bottom: 5rem;
+
 	.video-wrapper {
 		max-width: 640px;
 		margin: 0 auto;
@@ -13,7 +14,7 @@ const Container = styled.div`
 `;
 const Title = styled.h2`
 	margin: 0 7.5%;
-	margin-top: 6rem;
+	margin-top: 8rem;
 	margin-bottom: 1rem;
 	font-size: var(--header-s);
 	text-align: center;

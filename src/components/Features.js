@@ -1,19 +1,16 @@
 import styled from "styled-components";
-import { ReactComponent as Check } from "../asset/svg/check.svg";
-import { ReactComponent as Leaf } from "../asset/svg/leaf.svg";
-import { ReactComponent as Chart } from "../asset/svg/chart.svg";
+import Check from "../asset/svg/check.svg";
+import Leaf from "../asset/svg/leaf.svg";
+import Chart from "../asset/svg/chart.svg";
 import history from "../asset/png/history.png";
 import lamp from "../asset/png/lamp.png";
 
 const Container = styled.div`
 	width: 100%;
-	padding: 0 7.5%;
-	padding-top: 3rem;
-	padding-bottom: 3rem;
+	padding: 3rem 1rem;
 	background: var(--grey);
-	@media (min-width: 1600px) {
-		display: flex;
-		align-items: center;
+	@media (min-width: 768px) {
+		padding: 3rem 7.5%;
 	}
 `;
 const Header = styled.div`
@@ -24,22 +21,22 @@ const Header = styled.div`
 	h4 {
 		font-size: var(--header-s);
 	}
-	@media (min-width: 1600px) {
-		width: fit-content;
-	}
 `;
 const CardsWrapper = styled.div`
 	width: 100%;
-	@media (min-width: 1200px) {
+	max-width: 900px;
+	margin: 0 auto;
+	@media (min-width: 768px) {
 		display: flex;
 		justify-content: space-between;
 	}
 `;
 const Card = styled.div`
-	display: flex;
-	width: fit-content;
-	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	align-items: center;
 	margin-top: 2rem;
+
 	:hover .icon-wrapper {
 	}
 	:hover .icon-wrapper .motion {
@@ -56,7 +53,8 @@ const Card = styled.div`
 		align-items: center;
 		justify-content: center;
 		margin-left: 1rem;
-		cursor: pointer;
+		margin-right: auto;
+		/* cursor: pointer; */
 		.motion {
 			position: absolute;
 			transition: transform 0.3s ease-out;
@@ -85,11 +83,19 @@ const Card = styled.div`
 			color: var(--green);
 			cursor: pointer;
 		}
+		h2 {
+		}
 	}
-	@media (min-width: 1200px) {
-		flex-direction: column;
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
 		h2 {
 			margin-top: 0.5rem;
+		}
+		.icon-wrapper {
+			margin: 0 auto;
+		}
+		.detail {
+			text-align: center;
 		}
 	}
 `;
@@ -97,7 +103,13 @@ const Card = styled.div`
 const Features = ({ goToArticle, goToHistory, goToVideo }) => {
 	const cardsData = [
 		{
-			pic: <Leaf style={{ zIndex: 3 }} />,
+			pic: (
+				<img
+					style={{ zIndex: 3, width: "35px", height: "35px" }}
+					src={Leaf}
+					alt="تاییدیه FDA"
+				/>
+			),
 			title: "شمع های طبیعی",
 			desc: "متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
 			goto: goToArticle,
@@ -106,11 +118,11 @@ const Features = ({ goToArticle, goToHistory, goToVideo }) => {
 			pic: (
 				<img
 					style={{ zIndex: 3, width: "35px", height: "35px" }}
-					src={history}
-					alt="تاریخچه"
+					src={Check}
+					alt="تاییدیه FDA"
 				/>
 			),
-			title: "تاریخچه شمع ها",
+			title: "تاییدیه FDA",
 			desc: "متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
 			goto: goToHistory,
 		},
@@ -118,26 +130,25 @@ const Features = ({ goToArticle, goToHistory, goToVideo }) => {
 			pic: (
 				<img
 					style={{ zIndex: 3, width: "40px", height: "40px" }}
-					src={lamp}
+					src={Chart}
 					alt="تاریخچه"
 				/>
 			),
-			title: "طریقه مصرف",
+			title: "آماده همکاری",
 			desc: "متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
 			goto: goToVideo,
 		},
 	];
 	return (
 		<Container>
-			{/* <Header>
-				<span>{"باریزان شامل این"}</span>
+			<Header>
 				<h4>{"ویژگی ها"}</h4>
-				<span>{"است."}</span>
-			</Header> */}
+			</Header>
 			<CardsWrapper>
 				{cardsData.map((item, idx) => {
 					return (
-						<Card key={idx} onClick={cardsData[idx].goto}>
+						<Card key={idx} className="">
+							{/* <Card key={idx} onClick={cardsData[idx].goto} className=""> */}
 							<div className="icon-wrapper">
 								{cardsData[idx].pic}
 								<div className="motion" />
@@ -145,7 +156,7 @@ const Features = ({ goToArticle, goToHistory, goToVideo }) => {
 							<div className="detail">
 								<h2>{cardsData[idx].title}</h2>
 								{/* <p>{cardsData[idx].desc}</p> */}
-								<span>{"بیشتر بخوانید"}</span>
+								{/* <span>{"بیشتر بخوانید"}</span> */}
 							</div>
 						</Card>
 					);

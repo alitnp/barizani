@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import logo from "../asset/svg/logo.svg";
+import logoText from "../asset/svg/logo-with-text.svg";
 import header1 from "../asset/image/header1.jpeg";
 import header2 from "../asset/image/header2.jpeg";
 
@@ -114,6 +115,7 @@ const Detail = styled.div`
 	}
 	h3 {
 		font-size: var(--header-xs);
+		white-space: nowrap;
 	}
 	p {
 		font-size: var(--text-m);
@@ -156,6 +158,10 @@ const Dot = styled.div`
 	border-radius: 30px;
 	margin: 0.5rem;
 	transform: ${(p) => (p.selected ? "scale(1.3)" : "scale(1)")};
+	cursor: pointer;
+	&:hover {
+		background-color: #89b89f;
+	}
 `;
 
 const headerData = [
@@ -176,13 +182,22 @@ const headerData = [
 		مفید برای سیستم تنفسی، پاکسازی محیط، تنظیم کننده چاکراها
 		با سوزاندن آن احساس آرامش میکنیم.`,
 	},
+	{
+		pic: logoText,
+		title: "باریزان",
+		subTitle: "شمع های طبی",
+		desc: `شمعهای ساخته از موم طبیعی
+		در دو شکل سفالی و شیشه ای ارائه میگردد.
+		مفید برای سیستم تنفسی، پاکسازی محیط، تنظیم کننده چاکراها
+		با سوزاندن آن احساس آرامش میکنیم.`,
+	},
 ];
 
 const Header = ({ goToContactUs, goToHistory, goToVideo }) => {
-	const [slide, setSlide] = useState(0);
+	const [slide, setSlide] = useState(2);
 
 	useEffect(() => {
-		const imageList = [header1, header2];
+		const imageList = [header1, header2, logoText];
 		imageList.forEach((image) => {
 			new Image().src = image;
 		});
@@ -214,7 +229,7 @@ const Header = ({ goToContactUs, goToHistory, goToVideo }) => {
 					<div className="bullet"></div>
 					<p onClick={goToVideo}>{"طریقه مصرف"}</p>
 					<div className="bullet"></div>
-					<p onClick={goToContactUs}>{"ثبت سفارش"}</p>
+					<p onClick={goToContactUs}>{"ارتباط با ما"}</p>
 				</div>
 			</LogoWrapper>
 			<Detail>
@@ -234,12 +249,14 @@ const Header = ({ goToContactUs, goToHistory, goToVideo }) => {
 				</Bullets>
 			</Detail>
 			<ImageWrapper slide={slide}>
-				{slide === 0 && <img src={headerData[0].pic} alt="عکس از شمع طبی" />}
-				{slide === 1 && (
+				{slide !== 2 && (
+					<img src={headerData[slide].pic} alt="عکس از شمع طبی" />
+				)}
+				{slide === 2 && (
 					<img
-						src={headerData[1].pic}
+						src={headerData[slide].pic}
 						alt="عکس از شمع طبی"
-						style={{ transform: "scale(1.1)" }}
+						style={{ marginTop: "32px" }}
 					/>
 				)}
 			</ImageWrapper>

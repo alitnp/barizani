@@ -7,7 +7,10 @@ const Container = styled.div`
 	width: 85%;
 	margin: 3rem 7.5%;
 	text-align: center;
-
+	margin-bottom: 8rem;
+	h2 {
+		font-size: var(--header-s);
+	}
 	@media (min-width: 990px) {
 		display: flex;
 		justify-content: space-evenly;
@@ -79,7 +82,7 @@ const Arrows = styled.div`
 `;
 const Title = styled.h2`
 	margin: 0 7.5%;
-	margin-top: 6rem;
+	margin-top: 8rem;
 	margin-bottom: -2rem;
 	font-size: var(--header-xs);
 	text-align: center;

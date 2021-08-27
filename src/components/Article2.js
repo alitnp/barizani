@@ -7,6 +7,8 @@ import { ReactComponent as LogoText } from "../asset/svg/logo-text.svg";
 const Container = styled.article`
 	padding: 3rem 7.5%;
 	padding-bottom: 0;
+	margin-bottom: 64px;
+
 	.detail {
 	}
 	.image-wrapper {
@@ -37,11 +39,16 @@ const Container = styled.article`
 			margin-left: auto;
 			flex-shrink: 0;
 			width: 400px;
-			height: 300px;
+			height: 350px;
 			margin-top: unset;
 		}
 		.detail {
 			margin-right: 2rem;
+		}
+	}
+	@media (min-width: 1600px) {
+		.image-wrapper {
+			width: 550px;
 		}
 	}
 `;
@@ -54,7 +61,7 @@ const SubTitle = styled.h2`
 `;
 const Desc = styled.p`
 	color: var(--text-grey);
-	font-size: var(--text-m);
+	font-size: 14px;
 	margin-bottom: 2rem;
 	max-width: 85ch;
 `;
@@ -64,11 +71,11 @@ const Article1 = ({ goToContactUs }) => {
 		<Container>
 			<div className="detail">
 				{/* <Title>{"با استفاده از طب سنتی و مواد طبیعی"}</Title> */}
-				<SubTitle>{"تاییدیه قانونی محصول"}</SubTitle>
+				<SubTitle>{"مکانیسم عملکرد شمع"}</SubTitle>
 				<Desc>
 					<p>
 						{
-							"اولین شمع کاملا بی خطر و موثر در دنیا تایید شده در مرکز تحقیقات طب سنتی دانشکده داروسازی دانشگاه تهران ثبت شده در اداره ثبت اسناد مالکیت معنوی به شماره 102251 مورخ 13/06/1399."
+							"تجمع جرم به دلیل تخلیه نشدن در گوش موجب مشکلات شنوایی و مسائل جانبی میگردد. این محصول با ایجاد خلاء و دود حاصل از سوختن بره موم با خواص ضد باکتریایی و ضد قارچی بالقوه خود مکش ایجاد کرده، باعث جابجایی جرم و به مرور تخلیه آنها میگردد. این محصول به دلیل استفاده از مواد 100% طبیعی (کتان، پنبه، موم زنبور عسل و گیاهان دارویی موثر) هیچ گونه ضرر و آسیبی نخواهد داشت."
 						}
 					</p>
 				</Desc>

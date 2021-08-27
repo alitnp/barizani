@@ -1,21 +1,24 @@
 import styled from "styled-components";
-import { ReactComponent as Check } from "../asset/svg/check-line.svg";
+import check from "../asset/svg/check-line.svg";
+import fda from "../asset/png/fda.png";
 
 const Container = styled.div`
-	padding: 5rem 7.5%;
+	padding: 1rem 7.5%;
+	margin-bottom: 6rem;
 	width: 100%;
-	background-color: var(--green-light);
+	display: flex;
+	align-items: center;
 `;
 const Title = styled.div`
-	& * {
-		display: inline;
-	}
+	display: flex;
+	align-items: center;
 	svg {
 		height: 52px;
 		transform: translateY(0.5rem);
 	}
 	h2 {
 		color: var(--green);
+		white-space: nowrap;
 	}
 `;
 const Desc = styled.div`
@@ -26,25 +29,47 @@ const Desc = styled.div`
 	}
 `;
 
+const Info = styled.div`
+	width: 100%;
+	height: 100%;
+	@media only screen and (min-width: 768px) {
+		width: 50%;
+	}
+`;
+
+const Image = styled.img`
+	display: none;
+	width: 50%;
+	height: 100%;
+	max-height: 350px;
+	object-fit: contain;
+	object-position: center center;
+	@media only screen and (min-width: 768px) {
+		display: block;
+	}
+`;
+
 const History = ({ name }) => {
 	return (
 		<Container name={name}>
-			<Title>
-				<Check />
-				<h2>{"دارای مجوز از سازمان FDA"}</h2>
-			</Title>
-			<Desc>
-				<p>
-					{
-						"متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
-					}
-				</p>
-				<p>
-					{
-						"متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
-					}
-				</p>
-			</Desc>
+			<Info>
+				<Title>
+					<img
+						src={check}
+						alt="check icon"
+						style={{ width: "40px", marginLeft: "1rem" }}
+					/>
+					<h2>{"دارای مجوز از سازمان FDA"}</h2>
+				</Title>
+				<Desc>
+					<p>
+						{
+							"اولین شمع کاملا بی خطر و موثر در دنیا تایید شده در مرکز تحقیقات طب سنتی دانشکده داروسازی دانشگاه تهران ثبت شده در اداره ثبت اسناد مالکیت معنوی به شماره 102251 مورخ 13/06/1399."
+						}
+					</p>
+				</Desc>
+			</Info>
+			<Image src={fda} alt="fda approved logo" style={{}} />
 		</Container>
 	);
 };
