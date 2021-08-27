@@ -83,7 +83,6 @@ const Arrows = styled.div`
 const Title = styled.h2`
 	margin: 0 7.5%;
 	margin-top: 8rem;
-	margin-bottom: -2rem;
 	font-size: var(--header-xs);
 	text-align: center;
 	display: none;

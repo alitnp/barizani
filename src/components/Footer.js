@@ -4,13 +4,13 @@ import pic from "../asset/image/footer.jpeg";
 const Container = styled.div`
 	width: 100%;
 	padding-top: 3rem;
-	padding-bottom: 3rem;
+	padding-bottom: 5rem;
 	/* background: url(${pic}) rgba(218, 185, 142, 0.9); */
 	/* background-blend-mode: hue;
 	background-size: cover;
 	background-position: center bottom;
 	background-attachment: fixed; */
-	background-color: var(--yellow-bg);
+	/* background-color: #faead4; */
 	@media (min-width: 768px) {
 		border-bottom-left-radius: 0.5rem;
 		border-bottom-right-radius: 0.5rem;
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 	margin: 0 7.5%;
 	border-top: 1px solid var(--text);
 	li {
-		font-size: var(--text-m);
+		font-size: 14px;
 		margin-top: 1rem;
 		max-width: 75ch;
 	}

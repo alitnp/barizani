@@ -57,14 +57,14 @@ function App() {
 				goToHistory={goToHistory}
 				goToVideo={goToVideo}
 			/>
-			<Article1 goToContactUs={goToContactUs} name="article" />
-			<Article2 goToContactUs={goToContactUs} />
-			<GreenBanner />
+			<Article1 name="article" />
+			<Article2 />
+			<GreenBanner goToContactUs={goToContactUs} />
 			<Legal name="FDA" />
 			<Natural />
 			<History name="history" />
 			{/* <CoOp name="coop" goToContactUs={goToContactUs} /> */}
-			<Article3 goToContactUs={goToContactUs} />
+			<Article3 />
 			<Video name="video" />
 			{/* <AboutUs /> */}
 			<ContactUs name="contact-us" />

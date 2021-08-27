@@ -115,7 +115,6 @@ const Detail = styled.div`
 	}
 	h3 {
 		font-size: var(--header-xs);
-		white-space: nowrap;
 	}
 	p {
 		font-size: var(--text-m);
@@ -138,6 +137,9 @@ const Detail = styled.div`
 			margin: 0;
 			margin-top: 0.25rem;
 			text-align: right;
+		}
+		h3 {
+			white-space: nowrap;
 		}
 	}
 `;
@@ -194,7 +196,7 @@ const headerData = [
 ];
 
 const Header = ({ goToContactUs, goToHistory, goToVideo }) => {
-	const [slide, setSlide] = useState(2);
+	const [slide, setSlide] = useState(0);
 
 	useEffect(() => {
 		const imageList = [header1, header2, logoText];

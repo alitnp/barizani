@@ -26,9 +26,12 @@ const CardsWrapper = styled.div`
 	width: 100%;
 	max-width: 900px;
 	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	align-items: center;
 	@media (min-width: 768px) {
-		display: flex;
-		justify-content: space-between;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		align-items: space-between;
 	}
 `;
 const Card = styled.div`
@@ -88,6 +91,7 @@ const Card = styled.div`
 	}
 	@media (min-width: 768px) {
 		grid-template-columns: repeat(1, minmax(0, 1fr));
+		margin-right: 0;
 		h2 {
 			margin-top: 0.5rem;
 		}

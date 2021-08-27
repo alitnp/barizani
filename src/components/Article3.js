@@ -62,10 +62,16 @@ const Desc = styled.p`
 
 	.names {
 		display: flex;
+		justify-content: space-between;
+		text-align: center;
 		border-bottom: 1px solid black;
 		padding-bottom: 1rem;
 		& p {
 			margin-left: 12px;
+		}
+		@media (min-width: 990px) {
+			align-items: start;
+			flex-direction: column;
 		}
 	}
 `;
@@ -78,8 +84,8 @@ const Article3 = ({ goToContactUs }) => {
 				<SubTitle>{"مخترعین"}</SubTitle>
 				<Desc>
 					<div className="names">
-						<p>{"فاطمه سعیدی،"}</p>
-						<p>{"مهدی سبکتکین،"}</p>
+						<p>{"فاطمه سعیدی"}</p>
+						<p>{"مهدی سبکتکین"}</p>
 						<p>{"ونوس سبکتکین"}</p>
 					</div>
 

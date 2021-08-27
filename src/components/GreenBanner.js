@@ -33,7 +33,7 @@ const Info = styled.div`
 	}
 `;
 
-const GreenBanner = () => {
+const GreenBanner = ({ goToContactUs }) => {
 	return (
 		<Container>
 			<Info>
@@ -44,7 +44,7 @@ const GreenBanner = () => {
 					}
 				</Desc>
 			</Info>
-			<Button text="ارتباط با ما" />
+			<Button text="ارتباط با ما" onClick={goToContactUs} />
 		</Container>
 	);
 };

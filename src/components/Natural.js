@@ -13,14 +13,16 @@ const Container = styled.div`
 	margin-bottom: 3rem;
 	margin-top: 3rem;
 	padding: 3rem 0;
+	padding-bottom: 0;
 	display: flex;
 	align-items: center;
+	flex-direction: column;
 	@media (min-width: 990px) {
+		flex-direction: row;
 		padding: 2rem 0;
 	}
 `;
 const Image = styled.div`
-	display: none;
 	@media (min-width: 990px) {
 		display: block;
 		width: 100%;

@@ -7,7 +7,11 @@ const Container = styled.div`
 	margin-bottom: 6rem;
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
+	@media only screen and (min-width: 768px) {
+		flex-direction: row;
+	}
 `;
 const Title = styled.div`
 	display: flex;
@@ -32,18 +36,19 @@ const Desc = styled.div`
 const Info = styled.div`
 	width: 100%;
 	height: 100%;
+	z-index: 1;
 	@media only screen and (min-width: 768px) {
 		width: 50%;
 	}
 `;
 
 const Image = styled.img`
-	display: none;
 	width: 50%;
 	height: 100%;
 	max-height: 350px;
 	object-fit: contain;
 	object-position: center center;
+	z-index: 0;
 	@media only screen and (min-width: 768px) {
 		display: block;
 	}
