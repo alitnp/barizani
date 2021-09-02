@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.8b1919d7.chunk.css",
-    "main.js": "./static/js/main.a24526b9.chunk.js",
-    "main.js.map": "./static/js/main.a24526b9.chunk.js.map",
+    "main.js": "./static/js/main.e14624f5.chunk.js",
+    "main.js.map": "./static/js/main.e14624f5.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.51d0f505.js",
     "runtime-main.js.map": "./static/js/runtime-main.51d0f505.js.map",
     "static/js/2.48d18d6b.chunk.js": "./static/js/2.48d18d6b.chunk.js",
@@ -17,7 +17,7 @@
     "static/media/chart.7986bd41.svg": "./static/media/chart.7986bd41.svg",
     "static/media/check-line.3ab81300.svg": "./static/media/check-line.3ab81300.svg",
     "static/media/check.0376cd4c.svg": "./static/media/check.0376cd4c.svg",
-    "static/media/fda.f5df1590.png": "./static/media/fda.f5df1590.png",
+    "static/media/fda.1415c92a.png": "./static/media/fda.1415c92a.png",
     "static/media/footer.9ff6b304.jpeg": "./static/media/footer.9ff6b304.jpeg",
     "static/media/glass.c2e47c7f.jpeg": "./static/media/glass.c2e47c7f.jpeg",
     "static/media/header1.a6d47a84.jpeg": "./static/media/header1.a6d47a84.jpeg",
@@ -37,6 +37,6 @@
     "static/js/runtime-main.51d0f505.js",
     "static/js/2.48d18d6b.chunk.js",
     "static/css/main.8b1919d7.chunk.css",
-    "static/js/main.a24526b9.chunk.js"
+    "static/js/main.e14624f5.chunk.js"
   ]
 }
