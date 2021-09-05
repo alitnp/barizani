@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 const Title = styled.h2`
 	margin: 0 7.5%;
-	margin-top: 8rem;
+	margin-top: 5rem;
 	margin-bottom: 1rem;
 	font-size: var(--header-s);
 	text-align: center;

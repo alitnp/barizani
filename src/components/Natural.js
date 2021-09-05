@@ -19,7 +19,7 @@ const Container = styled.div`
 	flex-direction: column;
 	@media (min-width: 990px) {
 		flex-direction: row;
-		padding: 2rem 0;
+		padding: 0;
 	}
 `;
 const Image = styled.div`
@@ -58,11 +58,12 @@ const Title = styled.div`
 	}
 `;
 const Desc = styled.div`
-	font-size: var(--text-s);
+	font-size: 14px;
 	ul {
 		margin-top: 1rem;
+		margin-bottom: 0.5rem;
 		color: var(--text);
-		margin-right: 2rem;
+		margin-right: 1rem;
 	}
 `;
 
@@ -75,8 +76,14 @@ const Natural = ({ name }) => {
 					<h2>{"موارد منع استفاده"}</h2>
 				</Title>
 				<Desc>
+					<ul>
+						<li>{"کسانی که گوش آنها جراحی شده"}</li>
+						<li>{"سوراخی پرده گوش"}</li>
+						<li>{"داشتن پروتز در گوش"}</li>
+					</ul>
+					{"هشدار :"}
 					{
-						"تجمع جرم به دلیل تخلیه نشدن در گوش موجب مشکلات شنوایی و مسائل جانبی میگردد. این محصول با ایجاد خلاء و دود حاصل از سوختن بره موم با خواص ضد باکتریایی و ضد قارچی بالقوه خود مکش ایجاد کرده، باعث جابجایی جرم و به مرور تخلیه آنها میگردد. این محصول به دلیل استفاده از مواد 100% طبیعی (کتان، پنبه، موم زنبور عسل و گیاهان دارویی موثر) هیچ گونه ضرر و آسیبی نخواهد داشت."
+						"	این شمعها وسیله درمان نیست. برای مشکلات شنوائی و بیماری های گوش مراجعه به پزشک ضروریست."
 					}
 				</Desc>
 			</Detail>

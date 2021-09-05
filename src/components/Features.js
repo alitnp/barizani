@@ -9,6 +9,7 @@ const Container = styled.div`
 	width: 100%;
 	padding: 3rem 1rem;
 	background: var(--grey);
+	user-select: none;
 	@media (min-width: 768px) {
 		padding: 3rem 7.5%;
 	}
@@ -104,7 +105,7 @@ const Card = styled.div`
 	}
 `;
 
-const Features = ({ goToArticle, goToHistory, goToVideo }) => {
+const Features = ({ goToFDA, goToContactUs, goToNatural }) => {
 	const cardsData = [
 		{
 			pic: (
@@ -116,7 +117,7 @@ const Features = ({ goToArticle, goToHistory, goToVideo }) => {
 			),
 			title: "شمع های طبیعی",
 			desc: "متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
-			goto: goToArticle,
+			goto: goToNatural,
 		},
 		{
 			pic: (
@@ -128,7 +129,7 @@ const Features = ({ goToArticle, goToHistory, goToVideo }) => {
 			),
 			title: "تاییدیه FDA",
 			desc: "متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
-			goto: goToHistory,
+			goto: goToFDA,
 		},
 		{
 			pic: (
@@ -140,7 +141,7 @@ const Features = ({ goToArticle, goToHistory, goToVideo }) => {
 			),
 			title: "آماده همکاری",
 			desc: "متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
-			goto: goToVideo,
+			goto: goToContactUs,
 		},
 	];
 	return (
@@ -151,8 +152,7 @@ const Features = ({ goToArticle, goToHistory, goToVideo }) => {
 			<CardsWrapper>
 				{cardsData.map((item, idx) => {
 					return (
-						<Card key={idx} className="">
-							{/* <Card key={idx} onClick={cardsData[idx].goto} className=""> */}
+						<Card key={idx} className="" onClick={cardsData[idx].goto}>
 							<div className="icon-wrapper">
 								{cardsData[idx].pic}
 								<div className="motion" />

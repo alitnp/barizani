@@ -2,6 +2,7 @@ import AboutUs from "./components/AboutUs";
 import Article1 from "./components/Article1";
 import Article2 from "./components/Article2";
 import Article3 from "./components/Article3";
+import Article4 from "./components/Article4";
 import CoOp from "./components/CoOp";
 import Features from "./components/Features";
 import Header from "./components/Header";
@@ -20,28 +21,35 @@ function App() {
 		scroller.scrollTo("contact-us", {
 			duration: 300,
 			delay: 0,
-			smooth: "easeInOutQuart",
+			smooth: "easeOutQuart",
 		});
 	};
-	const goToArticle = () => {
-		scroller.scrollTo("article", {
-			duration: 300,
+	const goToFDA = () => {
+		scroller.scrollTo("FDA", {
+			duration: 250,
 			delay: 0,
-			smooth: "easeInOutQuart",
+			smooth: "easeOutQuart",
 		});
 	};
 	const goToHistory = () => {
 		scroller.scrollTo("history", {
-			duration: 300,
+			duration: 250,
 			delay: 0,
-			smooth: "easeInOutQuart",
+			smooth: "easeOutQuart",
 		});
 	};
 	const goToVideo = () => {
 		scroller.scrollTo("video", {
-			duration: 300,
+			duration: 250,
 			delay: 0,
-			smooth: "easeInOutQuart",
+			smooth: "easeOutQuart",
+		});
+	};
+	const goToNatural = () => {
+		scroller.scrollTo("natural", {
+			duration: 250,
+			delay: 0,
+			smooth: "easeOutQuart",
 		});
 	};
 
@@ -53,20 +61,21 @@ function App() {
 				goToVideo={goToVideo}
 			/>
 			<Features
-				goToArticle={goToArticle}
-				goToHistory={goToHistory}
-				goToVideo={goToVideo}
+				goToContactUs={goToContactUs}
+				goToFDA={goToFDA}
+				goToNatural={goToNatural}
 			/>
 			<Article1 name="article" />
 			<Article2 />
-			<GreenBanner goToContactUs={goToContactUs} />
-			<Legal name="FDA" />
-			<Natural />
 			<History name="history" />
-			{/* <CoOp name="coop" goToContactUs={goToContactUs} /> */}
-			<Article3 />
+			<GreenBanner goToContactUs={goToContactUs} />
 			<Video name="video" />
+			<Natural />
+			{/* <CoOp name="coop" goToContactUs={goToContactUs} /> */}
+			<Article4 name="natural" />
+			<Article3 />
 			{/* <AboutUs /> */}
+			<Legal name="FDA" />
 			<ContactUs name="contact-us" />
 			<Footer />
 		</PageLayout>

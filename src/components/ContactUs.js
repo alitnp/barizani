@@ -116,7 +116,7 @@ const ContactUs = ({ name }) => {
 						<span>{"تلفن تماس"}</span>
 					</div>
 					<p>{"۰۲۱-۲۲۲۰۹۷۶۹"}</p>
-					<p>{"۰۹۱۲-۱۷۹۷۶۸۳"}</p>
+					<p>{"۰۹۹۱-۲۳۹۱۵۹۹"}</p>
 				</Card>
 				<Card>
 					<div className="title">

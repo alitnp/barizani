@@ -3,14 +3,17 @@ import check from "../asset/svg/check-line.svg";
 import fda from "../asset/png/fda.png";
 
 const Container = styled.div`
-	padding: 1rem 7.5%;
+	padding: 3rem 7.5%;
 	margin-bottom: 6rem;
+	margin-top: 3rem;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background-color: var(--green-light);
 	@media only screen and (min-width: 768px) {
 		flex-direction: row;
+		padding: 0rem 7.5%;
 	}
 `;
 const Title = styled.div`

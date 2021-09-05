@@ -3,8 +3,7 @@ import Button from "./Button";
 
 const Container = styled.div`
 	padding: 2rem 7.5%;
-	margin-top: 8rem;
-	margin-bottom: 4rem;
+	margin-top: 2rem;
 	background-color: var(--green-light);
 	@media (min-width: 600px) {
 		display: flex;
